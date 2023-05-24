@@ -4,8 +4,9 @@ import java.util.Scanner;
 
 public class AddressBook {
 
+    Contact contact = new Contact();
+
     public void addContact() {
-        Contact contact = new Contact();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter FN");
         String firstName = scanner.next();
@@ -32,4 +33,56 @@ public class AddressBook {
         contact.setPhN(phN);
         contact.setEmailId(emailId);
     }
+
+    public int editPerson(int temp1) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println();
+        switch (temp1) {
+            case 1:
+                System.out.println("Enter FN");
+                String firstName = scanner.next();
+                contact.setFirstName(firstName);
+                break;
+            case 2:
+                System.out.println("Enter LN");
+                String lastName = scanner.next();
+                contact.setLastName(lastName);
+                break;
+            case 3:
+                System.out.println("Enter Address");
+                String address = scanner.next();
+                contact.setCity(address);
+                break;
+            case 4:
+                System.out.println("Enter City");
+                String city = scanner.next();
+                contact.setCity(city);
+                break;
+            case 5:
+                System.out.println("Enter State");
+                String state = scanner.next();
+                contact.setState(state);
+                break;
+            case 6:
+                System.out.println("Enter Zip Code");
+                int zip = scanner.nextInt();
+                contact.setZip(zip);
+                break;
+            case 7:
+                System.out.println("Enter Phone Number");
+                Long phN = scanner.nextLong();
+                contact.setPhN(phN);
+                break;
+            case 8:
+                System.out.println("Enter Email Id");
+                String emailId = scanner.next();
+                contact.setEmailId(emailId);
+                break;
+            default:
+                System.out.println("Wrong Number");
+        }
+        System.out.println(contact);
+        return temp1;
+    }
+
 }
