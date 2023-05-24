@@ -4,17 +4,22 @@ import java.util.Scanner;
 
 public class AddressBookMain {
     public static void main(String[] args) {
+        int numOfContacts = 0;
         String personName = " ";
 
         System.out.println("Welcome to Address Book Program");
 
         AddressBook addressBook1 = new AddressBook();
         System.out.println("Enter Your Options:");
-        System.out.println("1.Add a Contact");
-        System.out.println("2.Edit a Contact");
-        System.out.println("3.Delete a Contact");
+        System.out.println("1.Add Contact");
+        System.out.println("2.Edit Contact");
+        System.out.println("3.Delete Contact");
         Scanner scanner = new Scanner(System.in);
         int options = scanner.nextInt();
+        if (options==1){
+            System.out.println("Number of contacts to be added => ");
+            numOfContacts = scanner.nextInt();
+        }
         if (options==3){
             System.out.println("Enter the name of person you wanna delete");
             personName = scanner.next();
@@ -22,7 +27,9 @@ public class AddressBookMain {
 
         switch (options) {
             case 1:
-                addressBook1.addContact();
+                for (int i=1; i<=numOfContacts; i++) {
+                    addressBook1.addContact();
+                }
                 break;
             case 2:
                 System.out.println("Enter Your Options:");
