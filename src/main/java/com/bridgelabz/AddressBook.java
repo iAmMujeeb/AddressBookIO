@@ -1,9 +1,10 @@
 package com.bridgelabz;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AddressBook {
-
+    ArrayList<Contact> personList = new ArrayList<>();
     Contact contact = new Contact();
 
     public void addContact() {
@@ -32,6 +33,7 @@ public class AddressBook {
         contact.setZip(zip);
         contact.setPhN(phN);
         contact.setEmailId(emailId);
+        personList.add(contact);
     }
 
     public int editPerson(int temp1) {
@@ -83,6 +85,19 @@ public class AddressBook {
         }
         System.out.println(contact);
         return temp1;
+    }
+
+    public void deletePerson() {
+
+        contact.setCity("");
+        contact.setLastName("");
+        contact.setAddress("");
+        contact.setCity("");
+        contact.setState("");
+        contact.setZip(0);
+        contact.setPhN(0);
+        contact.setEmailId("");
+        System.out.println(contact);
     }
 
 }

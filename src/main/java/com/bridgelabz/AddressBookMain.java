@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class AddressBookMain {
     public static void main(String[] args) {
+        String personName = " ";
 
         System.out.println("Welcome to Address Book Program");
 
@@ -11,8 +12,13 @@ public class AddressBookMain {
         System.out.println("Enter Your Options:");
         System.out.println("1.Add a Contact");
         System.out.println("2.Edit a Contact");
+        System.out.println("3.Delete a Contact");
         Scanner scanner = new Scanner(System.in);
         int options = scanner.nextInt();
+        if (options==3){
+            System.out.println("Enter the name of person you wanna delete");
+            personName = scanner.next();
+        }
 
         switch (options) {
             case 1:
@@ -30,6 +36,9 @@ public class AddressBookMain {
                 System.out.println("8.Email Id");
                 int temp = scanner.nextInt();
                 addressBook1.editPerson(temp);
+                break;
+            case 3:
+                addressBook1.deletePerson();
                 break;
             default:
                 System.out.println("Wrong Option");
